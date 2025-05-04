@@ -1,0 +1,19 @@
+{% extends 'students/base.html' %}
+
+{% block title %}Student List{% endblock %}
+
+{% block content %}
+<h2>Student List</h2>
+<a href="{% url 'add_student' %}" style="background-color: #4CAF50; color: white; padding: 8px 16px; text-decoration: none; border-radius: 5px; margin-bottom: 20px; display: inline-block;">Add New Student</a>
+<ul>
+    {% for student in students %}
+    <li style="padding: 10px; border: 1px solid #ddd; margin-bottom: 10px; background-color: #fff; border-radius: 5px;">
+        <strong>{{ student.name }}</strong> ({{ student.age }}) - {{ student.email }}
+        <div style="margin-top: 5px;">
+            [<a href="{% url 'update_student' student.id %}" style="color: #4CAF50;">Edit</a>]
+            [<a href="{% url 'delete_student' student.id %}" style="color: red;">Delete</a>]
+        </div>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'students/base.html' %}
+
+{% block title %}Add New Student{% endblock %}
+
+{% block content %}
+<h2>Add New Student</h2>
+<form method="POST">
+    {% csrf_token %}
+    <label for="name">Name:</label>
+    <input type="text" name="name" id="name">
+    <label for="age">Age:</label>
+    <input type="number" name="age" id="age">
+    <label for="email">Email:</label>
+    <input type="email" name="email" id="email">
+    <button type="submit" style="background-color: #4CAF50; color: white; padding: 10px 20px; border-radius: 5px;">Add Student</button>
+</form>
+{% endblock %}

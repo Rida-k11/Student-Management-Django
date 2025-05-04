@@ -1,0 +1,12 @@
+{% extends 'students/base.html' %}
+
+{% block title %}Update Student{% endblock %}
+
+{% block content %}
+<h2>Update Student Information</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" style="background-color: #4CAF50; color: white; padding: 10px 20px; border-radius: 5px;">Update Student</button>
+</form>
+{% endblock %}
